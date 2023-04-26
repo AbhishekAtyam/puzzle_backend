@@ -31,7 +31,7 @@ def register():
     age=request.json.get('age')
     session['email'] = email
     conn = sqlite3.connect('database3.db')
-    conn.execute('CREATE TABLE IF NOT EXISTS User (email TEXT primary key, password TEXT)')
+    conn.execute('CREATE TABLE IF NOT EXISTS "User" ("email" TEXT PRIMARY KEY,"password" TEXT,"name" TEXT,"age" INTEGER,"currentquestion" INTEGER DEFAULT 1,Clue1" INTEGER DEFAULT 0,"Clue2" INTEGER DEFAULT 0,"Clue3" INTEGER DEFAULT 0,"Clue4" INTEGER DEFAULT 0,"Clue5" INTEGER DEFAULT 0,"Clue6" INTEGER DEFAULT 0,"Clue7" INTEGER DEFAULT 0,"Clue8" INTEGER DEFAULT 0,"Clue9" INTEGER DEFAULT 0,"chancesremaining" INTEGER DEFAULT 3,"score" INTEGER DEFAULT 0);') 
     cur = conn.cursor()
 
     cur.execute("INSERT INTO User (email, password,name,age) VALUES (?, ? ,? ,?)", (email, password, name, age))
@@ -47,7 +47,7 @@ def login():
     password = request.json.get('password')
     session['email'] = email
     conn = sqlite3.connect('database3.db')
-    conn.execute('CREATE TABLE IF NOT EXISTS User (email TEXT primary key, password TEXT)')
+    conn.execute('CREATE TABLE IF NOT EXISTS "User" ("email" TEXT PRIMARY KEY,"password" TEXT,"name" TEXT,"age" INTEGER,"currentquestion" INTEGER DEFAULT 1,Clue1" INTEGER DEFAULT 0,"Clue2" INTEGER DEFAULT 0,"Clue3" INTEGER DEFAULT 0,"Clue4" INTEGER DEFAULT 0,"Clue5" INTEGER DEFAULT 0,"Clue6" INTEGER DEFAULT 0,"Clue7" INTEGER DEFAULT 0,"Clue8" INTEGER DEFAULT 0,"Clue9" INTEGER DEFAULT 0,"chancesremaining" INTEGER DEFAULT 3,"score" INTEGER DEFAULT 0);') 
     cur = conn.cursor()
 
     query = "SELECT password FROM User WHERE email = ?"
