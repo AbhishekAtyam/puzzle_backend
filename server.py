@@ -2,7 +2,6 @@ from flask import Flask, request, render_template, session, redirect, url_for, j
 import smtplib
 import sqlite3
 import os
-from flask_cors import CORS
 
 app = Flask(__name__)
 app.secret_key = "your_super_secure_secret_key"
