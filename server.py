@@ -9,7 +9,7 @@ app.secret_key = "your_super_secure_secret_key"
 
 
 
-engine = app.config["SQLALCHEMY_DATABASE_URL"]=os.environ.get("DATABASE_URL")
+app.config["SQLALCHEMY_DATABASE_URL"]=os.environ.get("DATABASE_URL")
 
 # engine = sa.create_engine(app.config['SQLALCHEMY_DATABASE_URI'])
 # inspector = app.inspect(engine)
