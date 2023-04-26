@@ -1,6 +1,7 @@
 from flask import Flask, request, render_template, session, redirect, url_for, jsonify
 import smtplib
 import sqlite3
+import os
 from flask_cors import CORS
 
 app = Flask(__name__)
