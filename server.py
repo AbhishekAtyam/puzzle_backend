@@ -2,8 +2,11 @@ from flask import Flask, request, render_template, session, redirect, url_for, j
 import smtplib
 import sqlite3
 import os
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app, origins=['https://mystery-minds.onrender.com'])
+CORS(app, origins=['*'], methods=['GET', 'POST', 'PUT', 'DELETE'], supports_credentials=True)
 app.secret_key = "your_super_secure_secret_key"
 
 
