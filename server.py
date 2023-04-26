@@ -12,14 +12,14 @@ app.secret_key = "your_super_secure_secret_key"
 engine = app.config["SQLALCHEMY_DATABASE_URL"]=os.environ.get("DATABASE_URL")
 
 # engine = sa.create_engine(app.config['SQLALCHEMY_DATABASE_URI'])
-inspector = app.inspect(engine)
-if not inspector.has_table("users"):
-    with app.app_context():
-        db.drop_all()
-        db.create_all()
-        app.logger.info('Initialized the database!')
-else:
-    app.logger.info('Database already contains the users table.')
+# inspector = app.inspect(engine)
+# if not inspector.has_table("users"):
+#     with app.app_context():
+#         db.drop_all()
+#         db.create_all()
+#         app.logger.info('Initialized the database!')
+# else:
+#     app.logger.info('Database already contains the users table.')
     
     
     
